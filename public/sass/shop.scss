@@ -1,0 +1,8 @@
+@import '_nav';
+* {
+    margin: 0;
+    padding: 0;
+}
+header {
+    @include navbar;
+}

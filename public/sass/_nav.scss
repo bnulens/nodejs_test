@@ -1,0 +1,22 @@
+@mixin navbar {
+    ul {
+        list-style: none;
+    }
+
+    li {
+        margin: 1em;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 3.5rem;
+        background-color: rgb(27, 27, 35);
+    }
+}
