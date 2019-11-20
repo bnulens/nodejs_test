@@ -9,6 +9,10 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
+// Need to set the Templating engine
+app.set('view engine', 'ejs');
+app.set('views', 'views');
+
 // Imported paths 
 const adminData = require('./routes/admin');
 const shopData = require('./routes/shop');
@@ -28,7 +32,18 @@ app.use(homePath);
 
 // Adding a 'catch all' middleware redirecting to a 404-page
 app.use((req, res, next) => {
-    res.status(404).sendFile(path.join(__dirname, 'views', '404.html'))
+    /* Sending an HTML as a response, from a generated path 
+        res.status(404).sendFile(path.join(__dirname, 'views', '404.html'));
+    */
+    // Sending a response via EJS 
+    res.status(404).render('404', { pageTitle: 'Page Not Found'});
 });
 
-app.listen(3000);
+/* Ports are being dynamically asigned in production where as we use port 3000 for local developement
+    To use another port you have to assign it through an Environmental Variable in the terminal
+    WinOS = set PORT= (portnumber);
+    Linux/MacOS = export PORT= (portnumber);
+*/
+
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log(`Listening on port ${port}`));
