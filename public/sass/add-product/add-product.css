@@ -1,20 +1,11 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Rubik', sans-serif;
 }
 
-header ul {
-  list-style: none;
-}
-
-header li {
-  margin: 1em;
-}
-
-header a {
-  text-decoration: none;
-  color: white;
+:focus {
+  outline: none;
 }
 
 header .navbar {
@@ -29,5 +20,71 @@ header .navbar {
           align-items: center;
   height: 3.5rem;
   background-color: #1b1b23;
+  list-style: none;
+}
+
+header .navbar li {
+  margin: 1em;
+}
+
+header .navbar a {
+  text-decoration: none;
+  color: white;
+}
+
+main {
+  max-width: 80vw;
+  margin: 50px auto 50px;
+}
+
+#section__input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#section__input .section__input--wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#section__input .section__input--wrapper h2 {
+  font-size: 2rem;
+}
+
+#section__input .section__input--wrapper input {
+  width: 25vw;
+  height: 2.2vh;
+  border-radius: 1rem;
+  border: 1px solid lightgrey;
+  background-color: none;
+  margin: 1vh auto;
+}
+
+#section__input .section__input--wrapper button {
+  min-width: 12vw;
+  height: 3vh;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  color: #1b1b23;
+  background-color: white;
+  border-radius: 1rem;
+  border: 1px solid #1b1b23;
+}
+
+#section__input .section__input--wrapper button:hover {
+  color: white;
+  background-color: #1b1b23;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
 }
 /*# sourceMappingURL=add-product.css.map */

@@ -1,5 +1,46 @@
-@import '_nav';
+@import '../_parts/nav';
 
 header {
     @include navbar;
 }
+
+main {
+   max-width: 80vw;
+   margin: 50px auto 50px;
+}
+
+#section__input {
+    display: flex;
+    justify-content: center;
+    .section__input--wrapper {
+        display: flex;
+        flex-direction: column;
+        h2 {
+            font-size: 2rem;
+        }
+        input {
+            width: 25vw;
+            height: 2.2vh;
+            border-radius: 1rem;
+            border: 1px solid lightgrey;
+            background-color: none;
+            margin: 1vh auto;
+        }
+        button {
+            min-width: 12vw;
+            height: 3vh;
+            align-self: center;
+            color: $navbar;
+            background-color: white;
+            border-radius: 1rem;
+            border: 1px solid $navbar;
+        }
+        button:hover{
+            color: white;
+            background-color: $navbar;
+            transition: all ease 0.5s;
+        }
+
+    }
+}
+

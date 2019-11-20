@@ -1,0 +1,19 @@
+@import '_colors';
+
+@mixin navbar {
+    .navbar {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 3.5rem;
+        background-color: $navbar;
+        list-style: none;
+        li {
+            margin: 1em;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    }
+}
