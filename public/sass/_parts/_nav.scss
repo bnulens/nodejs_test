@@ -1,19 +1,35 @@
 @import '_colors';
 
 @mixin navbar {
-    .navbar {
+    #navbar {
         display: flex;
         justify-content: flex-end;
         align-items: center;
         height: 3.5rem;
         background-color: $navbar;
-        list-style: none;
-        li {
-            margin: 1em;
-        }
-        a {
-            text-decoration: none;
-            color: white;
+        .navbar__options {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            margin-right: 4em;
+            li {
+                margin: 1em;
+            }
+            a {
+                display: block;
+                text-decoration: none;
+                color: white;
+                width: 100%;
+                height: 100%;
+            }
+            a:hover {
+                color: goldenrod;
+                transition: all ease 0.3s;
+            }
+            a:active {
+                display: block;
+                color: goldenrod;
+            }
         }
     }
 }
