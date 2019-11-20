@@ -35,4 +35,5 @@ A small repo for a NodeJS test - currently following courses/ still improving
  ## Sources
  
  **Flavio Copes** - _The NodeJS Handbook_     
- [NodeJS - The Complete Guide incl. MVC, REST APIs, GraphQL](https://www.udemy.com/course/nodejs-the-complete-guide/)
+ [NodeJS - The Complete Guide incl. MVC, REST APIs, GraphQL](https://www.udemy.com/course/nodejs-the-complete-guide/)  
+ [Express.js Tutorial: Build RESTful APIs with Node and Express | Mosh](https://www.youtube.com/watch?v=pKd0Rpw7O48)
