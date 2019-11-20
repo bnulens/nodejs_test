@@ -81,7 +81,7 @@ main #section__input .section__input--wrapper {
 
 main #section__input .section__input--wrapper h2 {
   font-size: 2rem;
-  weight: 700;
+  font-weight: 700;
 }
 
 main #section__input .section__input--wrapper input {
