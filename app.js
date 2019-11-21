@@ -11,6 +11,7 @@ const app = express();
 
 // Need to set the Templating engine
 app.set('view engine', 'ejs');
+// 'Views' is the default directory where the Templating Engine looks for files
 app.set('views', 'views');
 
 // Imported paths 
@@ -36,7 +37,7 @@ app.use((req, res, next) => {
         res.status(404).sendFile(path.join(__dirname, 'views', '404.html'));
     */
     // Sending a response via EJS 
-    res.status(404).render('404', { pageTitle: 'Page Not Found'});
+    res.status(404).render('404', { pageTitle: 'Page Not Found' });
 });
 
 /* Ports are being dynamically asigned in production where as we use port 3000 for local developement
