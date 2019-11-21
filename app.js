@@ -42,9 +42,8 @@ app.use((req, res, next) => {
 
 /* Ports are being dynamically asigned in production where as we use port 3000 for local developement
     To use another port you have to assign it through an Environmental Variable in the terminal
-    WinOS = set PORT= (portnumber);
-    Linux/MacOS = export PORT= (portnumber);
+    WinOS => set PORT= (portnumber);
+    Linux/MacOS => export PORT= (portnumber);
 */
-
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}`));
