@@ -7,7 +7,10 @@ const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 
+
 const app = express();
+
+
 
 // Need to set the Templating engine
 app.set('view engine', 'ejs');
@@ -25,6 +28,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 // To serve files statically from the public folder 
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+
 // Outsourced routes 
 // Filtered route to the /admin
 app.use('/admin', adminData.routes);
@@ -39,6 +44,10 @@ app.use((req, res, next) => {
     // Sending a response via EJS 
     res.status(404).render('404', { pageTitle: 'Page Not Found' });
 });
+
+// Custom favicon 
+const favicon = require('serve-favicon');
+app.use(favicon(path.join(__dirname,'public','favicon.ico')));
 
 /* Ports are being dynamically asigned in production where as we use port 3000 for local developement
     To use another port you have to assign it through an Environmental Variable in the terminal
