@@ -4,7 +4,7 @@
   font-family: 'Rubik', sans-serif;
 }
 
-:focus {
+*:focus {
   outline: none;
 }
 
