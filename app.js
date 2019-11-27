@@ -15,7 +15,7 @@ app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 // Imported paths 
-const adminData = require('./routes/admin');
+const adminRoutes = require('./routes/admin');
 const shopData = require('./routes/shop');
 const homePath = require('./routes/home');
 
@@ -25,11 +25,9 @@ app.use(bodyParser.urlencoded({extended: false}));
 // To serve files statically from the public folder 
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-
 // Outsourced routes 
 // Filtered route to the /admin
-app.use('/admin', adminData.routes);
+app.use('/admin', adminRoutes);
 app.use(shopData);
 app.use(homePath);
 
