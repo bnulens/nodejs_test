@@ -1,29 +1,16 @@
 const express = require('express');
 
-const rootDir = require('../utils/path');
-
 const path = require('path');
+
+const productsController = require('../controllers/products');
 
 const router = express.Router();
 
-const products = [];
+// /admin/add-product => GET
+// Express stores this route and executes it when the request lands on it
+router.get('/add-product', productsController.getAddProduct);
 
-router.get('/add-product', (req, res, next) => {
-    // res.sendFile(path.join(rootDir, 'views', 'add-product.html'))
-    res.render('add-product', {
-        prods: products,
-        pageTitle: 'Add Product',
-        path: '/admin/add-product',
-        hasProducts: products.length > 0,
-        activeShop: true,
-        productCSS: true
-    });
-});
+// /admin/add-product => POST
+router.post('/add-product', productsController.postAddProduct);
 
-router.post('/add-product', (req, res, next) => {
-    products.push({title: req.body});
-    res.redirect('/');
-});
-
-exports.routes = router;
-exports.products = products;
+module.exports = router;
