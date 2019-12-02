@@ -2,14 +2,31 @@
 <link rel="stylesheet" type="text/css" href="/sass/shop/shop.css">
 </head>
 <body>
-    <header>
-        <%- include('includes/navigation.ejs') %>
-    </header>
+    <%- include('includes/navigation.ejs') %>
     <main>
-        <section>
-        </section>
+        <% if (prods.length > 0) { %>
+            <div class="product-grid">
+                <% for (let product of prods) { %>
+                    <article class="product-card">
+                        <h2 class="product-card-title"><%= product.title %></h2>
+                        <div class="product-card-image">
+                            <img src="/" alt="test">
+                        </div>
+                        <div class="product-card-description">
+                            <h3 class="product-card-price"><%= product.price %></h3>
+                            <p class="product-card-text"></p>
+                        </div>
+                        <div class="product-card-action">
+                            <button class="product-card-add">Add to cart</button>
+                        </div>
+                    </article>
+                <% } %>
+            </div>
+        <% } else { %>
+            <h2>No Products Found</h2>
+        <% } %>
     </main>
-    <footer>
-    </footer>
+<footer>
+</footer>
 </body>
 </html>
