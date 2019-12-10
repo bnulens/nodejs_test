@@ -1,4 +1,5 @@
 const products = [];
+const Product = require('../models/product');
 
 exports.getAddProduct = (req, res, next) => {
     // res.sendFile(path.join(rootDir, 'views', 'add-product.html'))
@@ -12,11 +13,13 @@ exports.getAddProduct = (req, res, next) => {
 };
 
 exports.postAddProduct = (req, res, next) => {
-    products.push({title: req.body.title});
+    const product = new Product(req.body.title);
+    product.save();
     res.redirect('/shop');
 }
 
 exports.getProducts = (req, res, next) => {
+    const products = Product.fetchAll();
     
     // join() method works on other OS as well, building a right path
     /*   Sending an HTML file as response 
