@@ -19,6 +19,8 @@ const adminRoutes = require('./routes/admin');
 const shopData = require('./routes/shop');
 const homePath = require('./routes/home');
 
+const errorController = require('./controllers/error');
+
 // Bodies have to be parsed before they land on any path
 app.use(bodyParser.urlencoded({extended: false}));
 
@@ -30,15 +32,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/admin', adminRoutes);
 app.use(shopData);
 app.use(homePath);
+app.use(errorController.get404);
 
-// Adding a 'catch all' middleware redirecting to a 404-page
-app.use((req, res, next) => {
-    /* Sending an HTML as a response, from a generated path 
-        res.status(404).sendFile(path.join(__dirname, 'views', '404.html'));
-    */
-    // Sending a response via EJS 
-    res.status(404).render('404', { pageTitle: 'Page Not Found' });
-});
 
 // Custom favicon 
 const favicon = require('serve-favicon');
