@@ -1,9 +1,3 @@
-@import '../_parts/nav';
-
-header {
-    @include navbar;
-}
-
 main {
     display: flex;
     justify-content: center;
