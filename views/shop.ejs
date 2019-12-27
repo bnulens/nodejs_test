@@ -7,15 +7,18 @@
                 <% for (let product of prods) { %>
                     <article class="product-card">
                         <div class="product-card-image">
-                            <img src="/" alt="product-image">
-                            </div>
-                        <h2 class="product-card-title"><%= product.title %></h2>
+                            <img src="<%= product.imageURL %>" 
+                            alt="<%= product.title">
+                        </div>
+                        <h2 class="product-card-title">
+                            <%= product.title %>
+                        </h2>
                         <div class="product-card-description">
                             <h3 class="product-card-price"><%= product.price %></h3>
-                            <p class="product-card-text">description</p>
+                            <p class="product-card-text">$<%= product.description %></p>
                         </div>
                         <div class="product-card-action">
-                            <button class="product-card-add">Add to cart</button>
+                            <button class="product-add-to">Add to cart</button>
                         </div>
                     </article>
                 <% } %>
