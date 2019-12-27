@@ -2,16 +2,19 @@
     <nav id="navbar">
         <ul class="navbar__options">
             <li class="navbar__item">
-                <a href="/">Home</a>
+                <a class="<%= path === '/' ? 'active' : '' %>" href="/">Home</a>
             </li>
             <li class="navbar__item">
-                <a href="/shop">Shop</a>
+                <a class="<%= path === '/shop' ? 'active' : '' %>" href="/shop">Shop</a>
             </li>
             <li class="navbar__item">
-                <a href="/cart"><img class="navbar__cart__icon" src="/icons/cart-icon.png" alt="cart" width="22px"></a>
+                <a class="<%= path === '/cart' ? 'active' : '' %>" href="/cart"><img class="navbar__cart__icon" src="/icons/cart-icon.png" alt="cart" width="22px"></a>
             </li>
             <li class="navbar__item">
-                <a href="/admin/add-product">+Product</a>
+                <a class="<%= path === '/orders' ? 'active' : '' %>" href="/orders">Orders</a>
+            </li>
+            <li class="navbar__item">
+                <a class="<%= path === '/admin/add-product' ? 'active' : '' %>" href="/admin/add-product">+Product</a>
             </li>
         </ul>
     </nav>
