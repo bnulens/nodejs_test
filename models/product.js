@@ -1,11 +1,26 @@
-const products = [];
 const fs = require('fs');
 const path = require('path');
+
+const p = path.join(
+    path.dirname(process.mainModule.filename), 
+    'data',
+    'products.json'
+);
+
+const getProductsFromFile = cB => {
+    fs.readFile(p, (err, fileContent) => {
+        if (err) {
+            cB([]);
+        } else {
+            cB(JSON.parse(fileContent));
+        }
+    });
+};
 
 module.exports = class Product {
     //  Works like PHP 
     constructor(title, imageURL, description, price){
-        //  Here comes the property
+        //  Here come the properties
         this.title = title;
         this.imageURL = imageURL;
         this.description = description;
@@ -13,19 +28,11 @@ module.exports = class Product {
     }
     //  Save method - to store the product in the array above 
     save(){
-        const p = path.join
-        (path.dirname(process.mainModule.filename), 
-        'data',
-        'products.json'
-        );
-        fs.readFile(p, (err, fileContent) => {
-            let products = [];
-            if (!err) {
-                products = JSON.parse(fileContent);
-            } 
+        this.id = Math.random().toString();
+        getProductsFromFile(products => {
             products.push(this);
-            fs.writeFile(p, JSON.stringify(products), (err) => {
-                console.log(err);
+            fs.writeFile(p, JSON.stringify(products), err => {
+              console.log(err);
             });
         });
     }
@@ -39,16 +46,16 @@ module.exports = class Product {
         you want to return
     */ 
     static fetchAll(cB){
-        const p = path.join
-        (path.dirname(process.mainModule.filename), 
-        'data',
-        'products.json'
-        );
-        fs.readFile(p, (err, fileContent) => {
-            if (err) {
-                cB([]);
-            }
-            cB(JSON.parse(fileContent));
+        getProductsFromFile(cB);
+    }
+
+    static findById(id, cB) {
+        getProductsFromFile(products => {
+            // implicit return statement
+           
+            const product = products.find(p => p.id === id);
+            // execute synchronous callback function
+            cB(product);
         });
     }
-}
+};
