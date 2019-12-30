@@ -1,4 +1,3 @@
-const products = [];
 const Product = require('../models/product');
 
 exports.getAddProduct = (req, res, next) => {
