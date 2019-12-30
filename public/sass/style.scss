@@ -1,9 +1,0 @@
-@import './_parts/aux';
-@import './home/home.scss';
-@import './shop/shop.scss';
-@import './add-product/add-product.scss';
-@import './404/404.scss';
-
-header {
-    @include navbar;
-}

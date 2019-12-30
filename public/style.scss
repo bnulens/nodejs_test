@@ -1,0 +1,19 @@
+@import './sass/auxiliary';
+@import './sass/nav';
+@import './sass/product-card';
+@import './sass/product-input';
+
+// Topbar Navigation
+header {
+    @include navbar;
+}
+
+// Product Input
+#section__input {
+    @include product-input;
+}
+
+// Shop with product cards
+#shop-front {
+    @include product-card;
+}

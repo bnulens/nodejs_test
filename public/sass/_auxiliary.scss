@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik', sans-serif;
+}
+
+*:focus {
+    outline: none;
+}
+
+// Colors
+$navbar: #1b1b23;
+
+// General elements
+li {
+    text-decoration: none;
+    a {
+        display: block;
+        text-decoration: none;
+    }
+}
+
+body {
+    background-image: url('../images/back.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    width: auto;
+    margin-top: 50px;
+}
