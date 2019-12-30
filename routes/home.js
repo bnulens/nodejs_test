@@ -6,8 +6,6 @@ const router = express.Router();
 
 const homeLand = require('../controllers/homepage');
 
-// const rootDir = require('../utils/path');
-
 router.get('/', homeLand.homeController);
 
 module.exports = router;
