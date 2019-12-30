@@ -1,4 +1,3 @@
-const products = [];
 const Product = require('../models/product');
 
 exports.getProducts = (req, res, next) => {
@@ -10,6 +9,16 @@ exports.getProducts = (req, res, next) => {
         });
     });
 }; 
+
+// GET Product 
+exports.getProduct = (req, res, next) => {
+    // Parameter is dynamic from the route using the name 'productId' 
+    const prodId = req.params.productId;
+    Product.findById(prodId, product => {
+        console.log(product);
+    })
+    res.redirect('/products/');
+}
 
 exports.getCart = (req, res, next) => {
     res.render('shop/cart', {
