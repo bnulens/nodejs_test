@@ -2,6 +2,15 @@
 <body>
     <%- include('../includes/navigation.ejs') %>
     <main>
-        <h3>No products</h3>
+        <% if (product) { %>
+            <div class="product-detail">
+                <h1><%= product.title %></h1>
+                <p><%= product.description %></p>
+                <p><%= product.price %></p>
+            </div>
+        <% } else { %>
+            <h2>No Products Found</h2>
+        <% } %>
     </main>
+    <%- include('../includes/footer.ejs') %>
 </body>
