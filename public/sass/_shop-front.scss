@@ -1,0 +1,105 @@
+@use './shop-aside';
+
+@mixin shop-front {
+    @include shop-aside; 
+
+    .product-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        width: 70%;
+
+        .shop-front-title {
+            width: 100%;
+            h2 {
+                display: block;
+                position: relative;
+                padding: 15px;
+                font-size: 48px;
+                border-bottom: 3px solid $navbar;
+            }
+        }
+
+        .product-card {
+            width: 200px;
+            height: 480px;
+            padding: 20px;
+            margin: 5px;
+            color: white;
+            background-image: linear-gradient(transparent, $navbar, $navbar, $navbar);
+            -webkit-box-shadow: 0px 32px 24px -10px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 32px 24px -10px rgba(0,0,0,0.75);
+            box-shadow: 0px 32px 24px -10px rgba(0,0,0,0.75);
+            // Card Image
+            .product-card-image {
+                display: flex;
+                justify-content: center;
+                img {
+                display: block;
+                width: 240px;
+                }
+            }
+            // Card-text
+            .product-card-text {
+                padding: 5px 5px;
+                .product-card-title {
+                    font-weight: 400;
+                    font-size: 2.2vh;
+                    padding: 2px 0px;
+                    margin-top: 12px;
+                    border-bottom: 1px solid grey ;
+                }
+                .product-card-description {
+                    margin-top: 22px;
+                    text-align: left;
+                    p.product-card-description-text {
+                        font-size: 14px;
+                    }
+                    h3.product-card-price {
+                        margin-top: 28px;
+                        font-size: 22px;
+                        font-weight: 400;
+                        color: rgb(255, 191, 0);
+                    }
+                }
+            }
+            // Card action buttons
+            .product-card-action {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                margin-top: 26px;
+                a.btn {
+                    display: flex;
+                    align-items: center;
+                    margin: 0px 30px;
+                    color: grey;
+                    text-decoration: none;
+                    transition: all ease 0.3s;
+                }
+                a.btn:hover {
+                    border-bottom: 1px solid grey;
+                }
+                button.product-add-to {
+                    height: 50px;
+                    width: 60px;
+                    color: $navbar;
+                    border: 0.5px solid grey;
+                    border-radius: 12px;
+                    background-color: $navbar;
+                    transition: all ease-in 0.3s;
+                    img {
+                        width: 30px;
+                    }
+                }
+                button.product-add-to:hover {
+                    border: none;
+                    background-color: rgb(255, 191, 0);
+                    img {
+                        filter: invert(100%);
+                    }
+                }
+            }
+        }   
+    }
+}
