@@ -1,7 +1,10 @@
 @import './sass/auxiliary';
 @import './sass/nav';
-@import './sass/product-card';
 @import './sass/product-input';
+@import './sass/shop-front';
+@import './sass/shop-aside';
+@import './sass/footer';
+
 
 // Topbar Navigation
 header {
@@ -13,7 +16,13 @@ header {
     @include product-input;
 }
 
-// Shop with product cards
+// Shop with product cards + side menu
 #shop-front {
-    @include product-card;
+    @include shop-front;
+    width: 100%;
+    transition: all ease-out 0.5s;
+}
+
+footer {
+    @include footer;
 }
