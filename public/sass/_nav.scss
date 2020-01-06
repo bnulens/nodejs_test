@@ -3,14 +3,17 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        background-color: white;
+        height: 100px;
+        width: 95%;
         .navbar__options {
             display: flex;
             flex-wrap: wrap;
+            align-items: center;
             list-style: none;
             margin-right: 4em;
             li {
                 margin: 1em;
+                padding: 5px;
             }
             a {
                 display: block;
@@ -28,8 +31,9 @@
                 color: goldenrod;
             }
             .navbar__cart__icon{
+                align-self: center;
                 filter: invert(100);
-                width: 22px;
+                width: 30px;
             }
         }
     }
