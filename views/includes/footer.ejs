@@ -1,3 +1,73 @@
 <footer>
-    
+    <section id="footer-content">
+        <div class="footer-content-wrapper">
+            <div class="footer-nav-wrapper">
+                <nav class="footer-nav">
+                    <li class="footer-nav-item">
+                        <a class="<%= path === '/' ? 'active' : '' %>" href="/">Home</a>
+                    </li>
+                    <li class="footer-nav-item">
+                        <a class="<%= path === '/shop' ? 'active' : '' %>" href="/shop">Shop</a>
+                    </li>
+                    <li class="footer-nav-item">
+                        <a class="<%= path === '/cart' ? 'active' : '' %>" href="/cart">Cart</a>
+                    </li>
+                    <li class="footer-nav-item">
+                        <a class="<%= path === '/orders' ? 'active' : '' %>" href="/orders">Orders</a>
+                    </li>
+                </nav>
+            </div>
+            <div class="footer-info">
+                <!-- Use a Google maps API call in the future -->
+                <address class="footer-info-address">Vennestraat 353<br>Genk<br>Belgium</address>
+                <a class="footer-info-telephone" href="tel:089/214001"><img src="/icons/phone-icon.svg" alt="telephone-link-icon">089/214001</a>
+            </div>
+            <div class="footer-timetable">
+                <table class="footer-opening-hours">
+                    <tr>
+                        <td class="table-day">monday</td class="table-day">
+                        <td class="table-hours">13:00 - 18:00</td class="table-hours">
+                    </tr>
+                    <tr>
+                        <td class="table-day">tuesday</td>
+                        <td class="table-hours">closed</td>
+                    </tr>
+                    <tr>
+                        <td class="table-day">wednesday</td>
+                        <td class="table-hours">10:00 - 18:00</td>
+                    </tr>
+                    <tr>
+                        <td class="table-day">thursday</td>
+                        <td class="table-hours">10:00 - 18:00</td>
+                    </tr>
+                    <tr>
+                        <td class="table-day">friday</td>
+                        <td class="table-hours">10:00 - 21:00</td>
+                    </tr>
+                    <tr>
+                        <td class="table-day">saturday</td>
+                        <td class="table-hours">10:00 - 18:00</td>
+                    </tr>
+                    <tr>
+                        <td class="table-day">sunday</td>
+                        <td class="table-hours">closed</td>
+                    </tr>
+                </table>
+            </div>
+            <ul class="footer-links">
+                <li>
+                    <a href="https://www.facebook.com/georgeandthebear/"><img src="/icons/facebook-3.svg" alt="georgeandthebear-facebook"></a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/georgeandthebear/?hl=nl"><img src="/icons/instagram.svg" alt="georgeandthebear-instagram"></a>
+                </li>
+                <li>
+                    <a href="mailto:info@georgeandthebear.com"><img src="/icons/gmail.svg" alt="georgeandthebear-mailto"></a>
+                </li>
+            </ul>
+            <div class="footer-copyright">
+                <symbol>&copy</symbol>2020 georgeandthebear
+            </div>
+        </div>
+    </section>
 </footer>
