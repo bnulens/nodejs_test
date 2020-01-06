@@ -1,28 +1,58 @@
 <%- include('../includes/header.ejs') %>
 <body>
     <%- include('../includes/navigation.ejs') %>
-    <main>
+    <main id="shop-front">
+        <h1 class="shop-front-title">Shop</h1>
+        <section id="shop-aside-list">
+            <h2>Genres</h2>
+            <ul class="shop-genre-list">
+                <li class="genre">Blues</li>
+                <li class="genre">Rock</li>
+                <li class="genre">Metal</li>
+                <li class="genre">Funk</li>
+                <li class="genre">Techno</li>
+                <li class="genre">Pop</li>
+                <li class="genre">House</li>
+                <li class="genre">HipHop</li>
+            </ul>
+            <h2>Tags</h2>
+            <ul class="shop-tag-list">
+                <li class="tag-item">New Releases</li>
+                <li class="tag-item">New Releases</li>
+                <li class="tag-item">New Releases</li>
+                <li class="tag-item">New Releases</li>
+                <li class="tag-item">New Releases</li>
+            </ul>
+        </section>
         <% if (prods.length > 0) { %>
-            <div class="product-grid">
+            <section class="product-grid">
                 <% for (let product of prods) { %>
                     <article class="product-card">
                         <div class="product-card-image">
                             <img src="<%= product.imageURL %>" alt="<%= product.title %>">
                         </div>
-                        <h2 class="product-card-title"><%= product.title %></h2>
-                        <div class="product-card-description">
-                            <h3 class="product-card-price"><%= product.price %></h3>
-                            <p class="product-card-text"><%= product.description %></p>
+                        <div class="product-card-text">
+                            <h2 class="product-card-title">
+                                <%= product.title %>
+                            </h2>
+                            <div class="product-card-description">
+                                <p class="product-card-description-text"><%= product.description %></p>
+                                <h3 class="product-card-price">€ <%= product.price %></h3>
+                            </div>
                         </div>
                         <div class="product-card-action">
-                            <button class="product-card-add">Add to cart</button>
+                            <a href="/products/<%= product.id %>" class="btn">info</a>
+                            <form action="/add-to-cart" method="POST">
+                                <button class="product-add-to"><img src="/icons/cart-icon.svg" alt="cart-icon"></button>
+                            </form>
                         </div>
                     </article>
                 <% } %>
-            </div>
+            </section>
         <% } else { %>
             <h2>No Products Found</h2>
         <% } %>
     </main>
+    <%- include('../includes/footer.ejs') %>
 </body>
 </html>
