@@ -17,12 +17,6 @@ li a {
   text-decoration: none;
 }
 
-body {
-  background-image: url("../images/back.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -196,6 +190,10 @@ header #navbar .navbar__options .navbar__cart__icon {
   list-style: none;
 }
 
+#shop-front li {
+  list-style: none;
+}
+
 #shop-front .product-grid {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -222,12 +220,14 @@ header #navbar .navbar__options .navbar__cart__icon {
 
 #shop-front .product-grid .product-card {
   width: 200px;
-  height: 480px;
-  padding: 20px;
+  height: 500px;
+  padding: 0px 20px;
   margin: 5px;
   color: white;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(#1b1b23), color-stop(#1b1b23), to(#1b1b23));
-  background-image: linear-gradient(transparent, #1b1b23, #1b1b23, #1b1b23);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, transparent), color-stop(50%, #1b1b23), to(#1b1b23));
+  background-image: linear-gradient(to bottom, transparent 50%, #1b1b23 50%, #1b1b23);
+  background-position: 0% 100%;
+  background-size: 100% 200%;
   -webkit-box-shadow: 0px 32px 24px -10px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 32px 24px -10px rgba(0, 0, 0, 0.75);
 }
@@ -285,24 +285,6 @@ header #navbar .navbar__options .navbar__cart__icon {
   margin-top: 26px;
 }
 
-#shop-front .product-grid .product-card .product-card-action a.btn {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin: 0px 30px;
-  color: grey;
-  text-decoration: none;
-  -webkit-transition: all ease 0.3s;
-  transition: all ease 0.3s;
-}
-
-#shop-front .product-grid .product-card .product-card-action a.btn:hover {
-  border-bottom: 1px solid grey;
-}
-
 #shop-front .product-grid .product-card .product-card-action button.product-add-to {
   height: 50px;
   width: 60px;
@@ -324,6 +306,28 @@ header #navbar .navbar__options .navbar__cart__icon {
 }
 
 #shop-front .product-grid .product-card .product-card-action button.product-add-to:hover img {
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+}
+
+#shop-front .product-grid .product-card:hover {
+  -webkit-transition: all ease 0.8s;
+  transition: all ease 0.8s;
+  background-color: #ffbf00;
+  background-position: 0 0;
+}
+
+#shop-front .product-grid .product-card:hover .product-card-description h3.product-card-price {
+  color: #1b1b23;
+}
+
+#shop-front .product-grid .product-card:hover button.product-add-to:hover {
+  border: 1px solid #1b1b23;
+  background-color: #ffbf00;
+  cursor: pointer;
+}
+
+#shop-front .product-grid .product-card:hover button.product-add-to:hover img {
   -webkit-filter: invert(100%);
           filter: invert(100%);
 }
