@@ -25,30 +25,31 @@
             </ul>
         </section>
         <% if (prods.length > 0) { %>
-            <section class="product-grid">
+            <ul class="product-grid">
                 <% for (let product of prods) { %>
-                    <article class="product-card">
-                        <div class="product-card-image">
-                            <img src="<%= product.imageURL %>" alt="<%= product.title %>">
-                        </div>
-                        <div class="product-card-text">
-                            <h2 class="product-card-title">
-                                <%= product.title %>
-                            </h2>
-                            <div class="product-card-description">
-                                <p class="product-card-description-text"><%= product.description %></p>
-                                <h3 class="product-card-price">€ <%= product.price %></h3>
+                    <li>
+                        <a href="/products/<%= product.id %>" class="product-card">
+                            <div class="product-card-image">
+                                <img src="<%= product.imageURL %>" alt="<%= product.title %>">
                             </div>
-                        </div>
-                        <div class="product-card-action">
-                            <a href="/products/<%= product.id %>" class="btn">info</a>
-                            <form action="/add-to-cart" method="POST">
-                                <button class="product-add-to"><img src="/icons/cart-icon.svg" alt="cart-icon"></button>
-                            </form>
-                        </div>
-                    </article>
+                            <div class="product-card-text">
+                                <h2 class="product-card-title">
+                                    <%= product.title %>
+                                </h2>
+                                <div class="product-card-description">
+                                    <p class="product-card-description-text"><%= product.description %></p>
+                                    <h3 class="product-card-price">€ <%= product.price %></h3>
+                                </div>
+                            </div>
+                            <div class="product-card-action">
+                                <form action="/add-to-cart" method="POST">
+                                    <button class="product-add-to"><img src="/icons/cart-icon.svg" alt="cart-icon"></button>
+                                </form>
+                            </div>
+                        </a>
+                    </li>
                 <% } %>
-            </section>
+            </ul>
         <% } else { %>
             <h2>No Products Found</h2>
         <% } %>
