@@ -2,6 +2,9 @@
 
 @mixin shop-front {
     @include shop-aside; 
+    li {
+        list-style: none;
+    }
 
     .product-grid {
         display: flex;
@@ -22,11 +25,13 @@
 
         .product-card {
             width: 200px;
-            height: 480px;
-            padding: 20px;
+            height: 500px;
+            padding: 0px 20px;
             margin: 5px;
             color: white;
-            background-image: linear-gradient(transparent, $navbar, $navbar, $navbar);
+            background-image: linear-gradient(to bottom, transparent 50%, $navbar 50%,$navbar);
+            background-position: 0% 100%;
+            background-size: 100% 200%;
             -webkit-box-shadow: 0px 32px 24px -10px rgba(0,0,0,0.75);
             -moz-box-shadow: 0px 32px 24px -10px rgba(0,0,0,0.75);
             box-shadow: 0px 32px 24px -10px rgba(0,0,0,0.75);
@@ -69,17 +74,6 @@
                 justify-content: center;
                 width: 100%;
                 margin-top: 26px;
-                a.btn {
-                    display: flex;
-                    align-items: center;
-                    margin: 0px 30px;
-                    color: grey;
-                    text-decoration: none;
-                    transition: all ease 0.3s;
-                }
-                a.btn:hover {
-                    border-bottom: 1px solid grey;
-                }
                 button.product-add-to {
                     height: 50px;
                     width: 60px;
@@ -100,6 +94,24 @@
                     }
                 }
             }
-        }   
+        } 
+        .product-card:hover {
+            transition: all ease 0.8s;
+            background-color: rgb(255, 191, 0);
+            background-position: 0 0;
+            .product-card-description {
+                h3.product-card-price {
+                    color: $navbar;
+                }
+            }
+            button.product-add-to:hover {
+                border: 1px solid $navbar;
+                background-color: rgb(255, 191, 0);
+                cursor: pointer;
+                img {
+                    filter: invert(100%);
+                }
+            }
+        }  
     }
 }
