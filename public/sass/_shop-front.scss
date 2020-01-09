@@ -1,40 +1,40 @@
 @use './shop-aside';
 
 @mixin shop-front {
+    
     @include shop-aside; 
+    
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+
     li {
         list-style: none;
     }
-
-    .product-grid {
+    .shop-front-title {
+        position: absolute;
+        display: block;
+        justify-content: flex-start;
+        border-bottom: 3px solid $navbar;
+        h1 {
+            font-size: 48px;
+        }
+    }
+    ul.product-grid {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
-        width: 70%;
-
-        .shop-front-title {
-            width: 100%;
-            h2 {
-                display: block;
-                position: relative;
-                padding: 15px;
-                font-size: 48px;
-                border-bottom: 3px solid $navbar;
-            }
-        }
-
+        margin-top: 100px;
         .product-card {
             width: 200px;
             height: 500px;
             padding: 0px 20px;
             margin: 5px;
-            color: white;
-            background-image: linear-gradient(to bottom, transparent 50%, $navbar 50%,$navbar);
+            color: $navbar;
+            border-bottom: 2px solid $navbar ;
+            background-image: linear-gradient(to bottom, transparent 50%, white 50%, white);
             background-position: 0% 100%;
             background-size: 100% 200%;
-            -webkit-box-shadow: 0px 32px 24px -10px rgba(0,0,0,0.75);
-            -moz-box-shadow: 0px 32px 24px -10px rgba(0,0,0,0.75);
-            box-shadow: 0px 32px 24px -10px rgba(0,0,0,0.75);
             // Card Image
             .product-card-image {
                 display: flex;
@@ -52,7 +52,7 @@
                     font-size: 2.2vh;
                     padding: 2px 0px;
                     margin-top: 12px;
-                    border-bottom: 1px solid grey ;
+                    border-bottom: 1px solid $navbar ;
                 }
                 .product-card-description {
                     margin-top: 22px;
@@ -72,7 +72,6 @@
             .product-card-action {
                 display: flex;
                 justify-content: center;
-                width: 100%;
                 margin-top: 26px;
                 button.product-add-to {
                     height: 50px;
@@ -80,18 +79,16 @@
                     color: $navbar;
                     border: 0.5px solid grey;
                     border-radius: 12px;
-                    background-color: $navbar;
+                    background-color: white;
                     transition: all ease-in 0.3s;
                     img {
+                        filter: invert(100%);
                         width: 30px;
                     }
                 }
                 button.product-add-to:hover {
                     border: none;
                     background-color: rgb(255, 191, 0);
-                    img {
-                        filter: invert(100%);
-                    }
                 }
             }
         } 
