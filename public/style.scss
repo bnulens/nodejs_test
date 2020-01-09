@@ -3,6 +3,7 @@
 @import './sass/product-input';
 @import './sass/shop-front';
 @import './sass/shop-aside';
+@import './sass/product-detail';
 @import './sass/footer';
 
 
@@ -12,17 +13,19 @@ header {
 }
 
 // Product Input
-#section__input {
+#section-input {
     @include product-input;
 }
-
 // Shop with product cards + side menu
 #shop-front {
     @include shop-front;
-    width: 100%;
-    transition: all ease-out 0.5s;
+}
+// Specific item from Shop
+#product-detail-wrapper {
+    @include product-detail;
 }
 
 footer {
     @include footer;
 }
+
