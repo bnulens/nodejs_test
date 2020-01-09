@@ -1,16 +1,29 @@
 <%- include('../includes/header.ejs') %>
 <body>
     <%- include('../includes/navigation.ejs') %>
-    <main>
-        <% if (product) { %>
-            <div class="product-detail">
-                <h1><%= product.title %></h1>
-                <p><%= product.description %></p>
-                <p><%= product.price %></p>
-            </div>
-        <% } else { %>
-            <h2>No Products Found</h2>
-        <% } %>
+    <main class="container">
+        <div id="product-detail-wrapper">
+            <% if (product) { %>
+                <section class="product-detail">
+                    <div class="product-detail-card">
+                        <img class="product-detail-image" src="<%= product.imageURL %>" alt="<%= product.title %>">
+                        <form class="product-detail-card-action" action="/orders">
+                            <!-- If product.format is present it could be used as input for Orders -->
+                            <button class="product-detail-format">LP</button>
+                            <button class="product-detail-format">CD</button>
+                            <button class="product-detail-order">Order</button>
+                        </form>
+                    </div>
+                    <div class="product-detail-info">
+                        <h1 class="product-detail-title"><%= product.title %></h1>
+                        <p class="product-detail-artist"><%= product.description %></p>
+                        <p class="product-detail-price">€ <%= product.price %></p>
+                    </div>
+                </section>
+            <% } else { %>
+                <h2>No Products Found</h2>
+            <% } %>
+        </div>
     </main>
     <%- include('../includes/footer.ejs') %>
 </body>
