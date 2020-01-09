@@ -1,0 +1,63 @@
+@mixin product-detail {
+    display: flex;
+    justify-content: center;
+    margin: 80px 0px;
+    .product-detail {
+        display: flex;
+        flex-wrap: wrap;
+        border: 3px solid black;
+        padding: 20px;
+        .product-detail-card {
+            padding: 20px;
+            background-color: white;
+            img {
+                display: block;
+            }
+            form.product-detail-card-action {
+                display: flex; 
+                flex-flow: row wrap;
+                justify-content: space-evenly;
+                margin: 20px 0px;
+                // Buttons
+                button.product-detail-format {
+                display: block;
+                width: 42px;
+                padding: 10px;
+                margin-top: 10px;
+                color: rgb(255, 108, 108);
+                background: none;
+                border: 2px solid rgb(255, 108, 108);
+                cursor: pointer;
+                }
+                // Buttons hover
+                button.product-detail-format:hover {
+                    color: white;
+                    background-color: rgb(255, 108, 108);
+                    border: none;
+                }
+                button.product-detail-order {
+                    display: block;
+                    padding: 10px;
+                    margin-top: 10px;
+                    color: white;
+                    background-color: $navbar;
+                    cursor: pointer;
+                    width: 100%;
+                }
+            }
+            // p.product-detail-price
+        }
+        .product-detail-info {
+            width: 600px;
+            padding: 30px;
+            margin-left: 30px;
+            background-color: white;
+            h1.product-detail-title {
+                font-size: 42px;
+            }
+            p.product-detail-artist {
+                font-size: 22px;
+            }
+        }
+    }
+}
